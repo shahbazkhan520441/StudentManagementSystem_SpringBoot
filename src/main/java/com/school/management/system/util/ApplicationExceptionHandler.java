@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.school.management.system.exception.CourseNotFoundException;
+import com.school.management.system.exception.InvalidRequestException;
 import com.school.management.system.exception.StudentNotFoundException;
 import com.school.management.system.exception.TeacherNotFoundException;
 
@@ -30,7 +31,7 @@ public class ApplicationExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<ErrorStructure<String>> handleTeacherNotFoundException(TeacherNotFoundException ex) {
+    public ResponseEntity<ErrorStructure<String>> handleTeacherNotFoundException(InvalidRequestException ex) {
         return errorResponse(HttpStatus.NOT_FOUND, "Teacher not found", ex.getMessage());
     }
 
