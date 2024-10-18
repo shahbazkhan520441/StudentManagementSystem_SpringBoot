@@ -1,13 +1,9 @@
 package com.school.management.system.entity;
 
-import java.util.List;
-
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,16 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Student {
-	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int studentId;
-	private String studentName;
-	private String studentEmail;
-	private String studentAddress;
-	
-	@ManyToMany
-	private List<Course> courses;
-	
-
+public class Teacher {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int teacherId;
+    private String teacherName;
+    private String teacherEmail;
+    private String teacherAddress;
+    
 }
